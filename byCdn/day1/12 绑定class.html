@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: black;
+        }
+
+        .line {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <h1 v-bind:class="{active:isActive,line:isLine}">hi sean</h1>
+    <button v-on:click="btnClick"></button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            isActive: false,
+            isLine: true
+        },
+        methods: {
+            btnClick: function () {
+                this.isLine = !this.isLine;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>当前计数{{count}}</h2>
+    <!--    语法糖-->
+    <button @click="btn1('abc',$event)">btn1</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            count: 0
+        },
+        methods: {
+            btn1:function (abc,event) {
+                console.log(abc, event);
+            },
+
+        }
+    })
+</script>
+</body>
+</html>

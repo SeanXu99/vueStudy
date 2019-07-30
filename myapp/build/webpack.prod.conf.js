@@ -59,14 +59,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
-    // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
+    // generate dist 01 index.html with correct asset hash for caching.
+    // you can customize output by editing /01 index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
-        ? 'index.html'
+        ? '01 index.html.html'
         : config.build.index,
-      template: 'index.html',
+      template: '01 index.html.html',
       inject: true,
       minify: {
         removeComments: true,

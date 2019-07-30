@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div @click="div">
+        <!--        阻止事件冒泡-->
+        <button @click.stop="btn">btn</button>
+        <!--        阻止默认提交事件-->
+        <form action="baidu">
+            <input type="submit" value="提交" @click.prevent.stop="submitValue">
+        </form>
+        <!--        设定特定键触发事件-->
+        <input type="text" @keyup.space="keyup">
+        <!--        设置只触发一次-->
+        <button @click.once="btn">btn2</button>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            count: 0
+        },
+        methods: {
+            btn: function () {
+                console.log('btnClick');
+            },
+            div: function () {
+                console.log('divClick');
+            },
+            submitValue: function () {
+                console.log('aaaaa');
+            },
+            keyup: function () {
+                console.log(1111);
+            }
+        }
+    })
+</script>
+</body>
+</html>

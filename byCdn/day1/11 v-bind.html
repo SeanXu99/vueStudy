@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" v-cloak>
+    <!--    绑定属性动态加载-->
+    <a v-bind:href="imgUrl">baidu</a>
+    <a :href="imgUrl">baidu</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    setTimeout(function () {
+        const app = new Vue({
+            el: '#app',
+            data: {
+                imgUrl: 'http://www.baidu.com'
+            }
+        })
+    }, 2000)
+
+</script>
+</body>
+</html>

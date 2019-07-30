@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--定义数据加载完成之前的样式，可以有效防止在延迟较大的情况下，模版先于数据展示给用户，提升用户体验-->
+<div id="app" v-cloak>
+    <h1>{{message}}</h1>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    setTimeout(function () {
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '栋哥帅',
+            }
+        })
+    }, 2000)
+
+</script>
+</body>
+</html>
